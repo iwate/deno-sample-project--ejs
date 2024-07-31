@@ -1,0 +1,14 @@
+{
+  "tasks": {
+    "perms:env": "deno run _perms/env.ts",
+    "perms:read": "deno run --allow-env=$(deno task perms:env) _perms/read.ts",
+    "perms:write": "deno run --allow-env=$(deno task perms:env) _perms/write.ts",
+    "perms:net": "deno run --allow-env=$(deno task perms:env) _perms/net.ts",
+    "perms:run": "deno run --allow-env=$(deno task perms:env) _perms/run.ts",
+    "bundle:watch": "deno run --no-prompt --allow-env=$(deno task perms:env) --allow-read=$(deno task perms:read) --allow-write=$(deno task perms:write) --allow-net=$(deno task perms:net) --allow-run=$(deno task perms:run) bundle.ts",
+    "bundle": "deno run --no-prompt --allow-env=$(deno task perms:env) --allow-read=$(deno task perms:read) --allow-write=$(deno task perms:write) --allow-net=$(deno task perms:net) --allow-run=$(deno task perms:run) bundle.ts --production",
+    "serve": "deno run --no-prompt --allow-env=$(deno task perms:env) --allow-read=$(deno task perms:read) --allow-write=$(deno task perms:write) --allow-net=$(deno task perms:net) --allow-run=$(deno task perms:run) serve.ts",
+    "dev": "deno task bundle:watch & deno task serve",
+    "build": "deno task bundle && deno task serve --render-only"
+  }
+}

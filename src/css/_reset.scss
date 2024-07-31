@@ -1,0 +1,178 @@
+/**
+https://github.com/mayank99/reset.css/blob/v0.10.0/package/
+Copyright (c) 2023 Mayank
+
+The following license is modified from the MIT license.
+
+ANTI-FASCIST LICENSE:
+
+The following conditions must be met by any person obtaining a copy of this
+software:
+
+- You MAY NOT be a fascist.
+- You MUST not financially support fascists.
+- You MUST not publicly voice support for fascists.
+
+"Fascist" can be understood as any entity which supports radical authoritarian
+nationalism. For example: Donald Trump is a fascist; if you donated to his
+campaign then all rights provided by this license are not granted to you.
+
+MIT LICENSE:
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:where([hidden]:not([hidden='until-found'])) {
+	display: none !important;
+}
+
+:where(html) {
+	-webkit-text-size-adjust: none;
+	color-scheme: dark light;
+	tab-size: 2;
+	scrollbar-gutter: stable;
+}
+
+:where(html:has(dialog:modal[open])) {
+	overflow: clip;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	:where(html:focus-within) {
+		scroll-behavior: smooth;
+	}
+}
+
+:where(body) {
+	line-height: 1.5;
+	font-family: system-ui, sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+
+:where(button) {
+	all: unset;
+}
+
+:where(input, button, textarea, select) {
+	font: inherit;
+	color: inherit;
+}
+
+:where(textarea) {
+	resize: vertical;
+	resize: block;
+}
+
+:where(button, label, select, summary, [role='button'], [role='option']) {
+	cursor: pointer;
+}
+
+:where(:disabled) {
+	cursor: not-allowed;
+}
+
+:where(label:has(> input:disabled), label:has(+ input:disabled)) {
+	cursor: not-allowed;
+}
+
+:where(a) {
+	color: inherit;
+	text-underline-offset: 0.2ex;
+}
+
+:where(ul, ol) {
+	list-style: none;
+}
+
+:where(img, svg, video, canvas, audio, iframe, embed, object) {
+	display: block;
+}
+
+:where(img, picture, svg, video) {
+	max-inline-size: 100%;
+	block-size: auto;
+}
+
+:where(p, h1, h2, h3, h4, h5, h6) {
+	overflow-wrap: break-word;
+}
+
+:where(h1, h2, h3) {
+	line-height: calc(1em + 0.5rem);
+	text-wrap: balance;
+}
+
+:where(hr) {
+	border: none;
+	border-block-start: 1px solid;
+	color: inherit;
+	block-size: 0;
+	overflow: visible;
+}
+
+:where(dialog) {
+	border: none;
+	background: none;
+	inset: unset;
+	max-width: unset;
+	max-height: unset;
+}
+
+:where(dialog:not([open], [popover])) {
+	display: none !important;
+}
+
+:where([popover]) {
+	border: none;
+	background: none;
+	inset: unset;
+	color: inherit;
+}
+
+:where([popover]:not(:popover-open)) {
+	display: none !important;
+}
+
+:where(:focus-visible) {
+	outline: 3px solid CanvasText;
+	box-shadow: 0 0 0 5px Canvas;
+	outline-offset: 1px;
+}
+
+:where(:focus-visible, :target) {
+	scroll-margin-block: 8vh;
+}
+
+:where(.visually-hidden:not(:focus-within, :active)) {
+	clip-path: inset(50%) !important;
+	height: 1px !important;
+	width: 1px !important;
+	overflow: hidden !important;
+	position: absolute !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+	user-select: none !important;
+}
